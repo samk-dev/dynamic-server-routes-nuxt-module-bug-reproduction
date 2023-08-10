@@ -20,6 +20,7 @@ export default defineNuxtModule<ModuleOptions>({
     addServerHandler({
       route: "/api/hello/[name]",
       handler: resolver.resolve("./runtime/server/api/hello/[name].get.ts"),
+      method: "GET",
     });
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
     addPlugin(resolver.resolve("./runtime/plugin"));
